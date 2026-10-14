@@ -122,5 +122,9 @@ function lattice() {
   addEventListener("pointermove", e => { const r = c.getBoundingClientRect(); m.x = e.clientX - r.left; m.y = e.clientY - r.top; });
   addEventListener("resize", () => { build(); if (still) draw(); }); build(); draw();
 }
+/* If an image file is missing (e.g. the img folder was not uploaded), show a neat placeholder instead of a broken icon */
+document.addEventListener("error", e => { const i = e.target; if (i.tagName != "IMG" || i.dataset.f) return; i.dataset.f = 1;
+  const d = document.createElement("div"); d.className = "ph"; d.textContent = i.alt || "Photo"; d.style.aspectRatio = i.closest(".fc") ? "4/5" : "1"; i.replaceWith(d);
+  console.warn("Image not found:", i.getAttribute("src"), "- check that the img folder is uploaded next to index.html"); }, true);
 (async () => { await live(); layout(); $("#app").innerHTML = R[P](); after();
   addEventListener("hashchange", () => { if (P == "blog") { $("#app").innerHTML = R.blog(); after(); scrollTo(0, 0); } }); })();

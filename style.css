@@ -63,3 +63,4 @@ dialog .in{padding:26px;overflow:auto;max-height:88vh}dialog iframe{width:100%;h
 .two,.lead2,footer .wrap{grid-template-columns:1fr}.g3{grid-template-columns:1fr 1fr}.g4{grid-template-columns:1fr 1fr}.ev{grid-template-columns:70px 1fr}.ev .ea{grid-column:1/-1}.fnd{gap:16px}.chips input{margin:0;width:100%}.btn.g{margin:10px 0 0}}
 @media(max-width:480px){.g3{grid-template-columns:1fr}.brand b{font-size:17px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.ph{display:grid;place-items:center;text-align:center;padding:14px;background:#dbe6ef;color:var(--navy);font-weight:600;border-radius:8px}
